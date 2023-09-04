@@ -1,0 +1,8 @@
+ #How to remove a user in AAD#
+Connect-AzureAD
+
+$UserPrincipalName="UserAc@jknwokeyoutlook.onmicrosoft.com"
+$User=Get-AzADUser -ObjectId $UserPrincipalName
+$UserObjectID=$User.Id
+
+Remove-AzADUser -ObjectId $UserObjectID
